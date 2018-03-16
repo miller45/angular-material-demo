@@ -1,0 +1,180 @@
+@import '~@angular/material/theming';
+// Include this empty mixin for consistency with the other components.
+
+@mixin mat-custom-icon-theme($theme) {
+  $success: map-get($theme, primary);
+  $info: map-get($theme, accent);
+  $danger: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .mat-icon {
+    &.mat-success {
+      color: mat-color($success);
+    }
+
+    &.mat-info {
+      color: mat-color($info);
+    }
+
+    &.mat-danger {
+      color: mat-color($danger);
+    }
+  }
+}
+
+@mixin mat-custom-chips-theme($theme) {
+  $is-dark-theme: map-get($theme, is-dark);
+  $success: map-get($theme, primary);
+  $info: map-get($theme, accent);
+  $danger: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .mat-chip.mat-chip-selected {
+
+    &.mat-success {
+      @include mat-chips-theme-color($success);
+    }
+
+    &.mat-info {
+      @include mat-chips-theme-color($info);
+    }
+
+    &.mat-danger {
+      @include mat-chips-theme-color($danger);
+    }
+  }
+}
+
+@mixin mat-custom-button-theme($theme) {
+  $success: map-get($theme, primary);
+  $info: map-get($theme, accent);
+  $danger: map-get($theme, warn);
+  .mat-debug {
+    color: red;
+  }
+  .mat-button {
+    &.mat-success {
+      color: mat-color($success);
+    }
+  }
+
+  .mat-button {
+    &.mat-info {
+      color: mat-color($info);
+    }
+  }
+
+  .mat-button {
+    &.mat-danger {
+      color: mat-color($danger);
+    }
+  }
+
+  .mat-raised-button {
+    &.mat-success {
+      color: mat-color($success, default-contrast);
+      background: mat-color($success);
+    }
+  }
+
+  .mat-raised-button {
+    &.mat-info {
+      color: mat-color($info, default-contrast);
+      background: mat-color($info);
+    }
+  }
+
+  .mat-raised-button {
+    &.mat-danger {
+      color: mat-color($danger, default-contrast);
+      background: mat-color($danger);
+    }
+  }
+
+}
+
+//
+//
+//// Applies a property to an mat-button element for each of the supported palettes.
+//@mixin _mat-custom-button-theme-color($theme, $property, $color: 'default') {
+//  $success: map-get($theme, primary);
+//  $info: map-get($theme, accent);
+//  $danger: map-get($theme, warn);
+//  $background: map-get($theme, background);
+//  $foreground: map-get($theme, foreground);
+//
+//  &.mat-success {
+//    #{$property}: mat-color($success, $color);
+//  }
+//  &.mat-info {
+//    #{$property}: mat-color($info, $color);
+//  }
+//  &.mat-danger {
+//    #{$property}: mat-color($danger, $color);
+//  }
+//
+//  &.mat-primary, &.mat-accent, &.mat-warn, &[disabled] {
+//    &[disabled] {
+//      $palette: if($property == 'color', $foreground, $background);
+//      #{$property}: mat-color($palette, disabled-button);
+//    }
+//  }
+//}
+//
+//@mixin mat-custom-button-theme($theme) {
+//  $success: map-get($theme, primary);
+//  $info: map-get($theme, accent);
+//  $danger: map-get($theme, warn);
+//  $background: map-get($theme, background);
+//  $foreground: map-get($theme, foreground);
+//
+//  .mat-button, .mat-icon-button, .mat-stroked-button {
+//    background: transparent;
+//
+//    @include _mat-button-focus-color($theme);
+//    @include _mat-button-theme-color($theme, 'color');
+//  }
+//
+//  .mat-raised-button, .mat-fab, .mat-mini-fab {
+//    // Default properties when not using any [color] value.
+//    color: mat-color($foreground, text);
+//    background-color: mat-color($background, raised-button);
+//
+//    @include _mat-button-theme-color($theme, 'color', default-contrast);
+//    @include _mat-button-theme-color($theme, 'background-color');
+//
+//    // Add ripple effect with contrast color to buttons that don't have a focus overlay.
+//    @include _mat-button-ripple-color($theme, default-contrast);
+//  }
+//
+//  // Add ripple effect with default color to flat buttons, which also have a focus overlay.
+//  .mat-button {
+//    @include _mat-button-ripple-color($theme, default, 0.1);
+//  }
+//
+//  .mat-flat-button {
+//    // Default properties when not using any [color] value.
+//    color: mat-color($foreground, text);
+//
+//    background-color: mat-color($background, raised-button);
+//    @include _mat-button-theme-color($theme, 'color', default-contrast);
+//    @include _mat-button-theme-color($theme, 'background-color');
+//
+//    // Add ripple effect with contrast color to buttons that don't have a focus overlay.
+//    @include _mat-button-ripple-color($theme, default-contrast);
+//  }
+//
+//  // Add ripple effect with default color to the icon button. Ripple color needs to be stronger
+//  // since the icon button doesn't have a focus overlay.
+//  .mat-icon-button {
+//    @include _mat-button-ripple-color($theme, default);
+//  }
+//}
+
+@mixin custom-material-theme($theme) {
+  @include mat-custom-icon-theme($theme);
+  @include mat-custom-chips-theme($theme);
+  @include mat-custom-button-theme($theme);
+}

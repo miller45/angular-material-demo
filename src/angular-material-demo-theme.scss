@@ -1,21 +1,33 @@
 @import '~@angular/material/theming';
+@import "bsweb-pallettes";
+@import "bsweb-typography";
+@import "custom-material-theme";
 
-@include mat-core();
+@include mat-core($tconfig);
 
-$primary: mat-palette($mat-indigo);
-$accent:  mat-palette($mat-pink, A200, A100, A400);
-$warn:    mat-palette($mat-red, A700);
+$primary: mat-palette($md-bsweb-sky, 500, A200, A700);
+$accent: mat-palette($md-bsweb-wisteria, A400, A200, A700); //$base-palette, $default: 500, $lighter: 100, $darker: 700
+$warn: mat-palette($md-bsweb-pumkin, A400, A200, A700);
 
-$theme: mat-light-theme($primary, $accent);
+$theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 
-.m2app-dark {
-  $primary: mat-palette($mat-pink, 700, 500, 900);
-  $accent:  mat-palette($mat-blue-grey, A200, A100, A400);
-  $warn:    mat-palette($mat-red, A700);
+$success: mat-palette($md-bsweb-lemon, A400, A200, A700);
+$info: mat-palette($md-bsweb-aqua, A400, A200, A700); //$base-palette, $default: 500, $lighter: 100, $darker: 700
+$danger: mat-palette($md-bsweb-pomegranate, A400, A200, A700);
 
-  $theme:   mat-dark-theme($primary, $accent, $warn);
+$custom-theme: mat-light-theme($success, $info, $danger);
 
-  @include angular-material-theme($theme);
-}
+@include custom-material-theme($custom-theme);
+
+//
+//.m2app-dark {
+//  $primary: mat-palette($mat-pink, 700, 500, 900);
+//  $accent: mat-palette($mat-blue-grey, A200, A100, A400);
+//  $warn: mat-palette($mat-red, A700);
+//
+//  $theme: mat-dark-theme($primary, $accent, $warn);
+//
+//  @include angular-material-theme($theme);
+//}

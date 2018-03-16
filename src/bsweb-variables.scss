@@ -1,0 +1,188 @@
+/* include this if you dont know which else to take */
+@import "colornames.scss";
+
+/* FIXME: rename to bsweb-font-... schema */
+$font-light: "Segoe UI Light", "SegoeUI-Light", Arial, sans-serif;
+$font-semilight: "Segoe UI Semilight", "SegoeUI-Semilight", Arial, sans-serif;
+$font-regular: "Segoe UI", "SegoeUI-Regular", Arial, sans-serif;
+$font-semibold: "Segoe UI Semibold", "SegoeUI-SemiBold", Arial, sans-serif;
+$font-bold: "Segoe UI Bold", "SegoeUI-Bold", Arial, sans-serif;
+$font-italic: "Segoe UI Italic", "SegoeUI-Italic", Arial, sans-serif;
+
+$default-color: $colorname-text-regular;
+$light-color: $colorname-asphalt-light;
+
+$bsweb-link-color: $colorname-aqua-regular;
+
+$bsweb-border-color: $colorname-sky-shadow;
+
+$default-bg: $colorname-text-extralight;
+$special-bg: $colorname-clouds-shadow;
+$basetheme-bg: $colorname-text-extralight;
+$darktheme-bg: #D3D3D3;
+$darktheme-brighter-bg: lighten($darktheme-bg,11.5%);
+
+$hover-color: $default-color;
+$hover-bg: darken($default-bg, 10%);
+
+$disabled-color: $colorname-slate-light;
+
+$grid-line-color: $colorname-silver-light;
+
+$context-menu-font: $font-regular;
+$context-menu-color: $default-color;
+$context-menu-bg: fade(#606060, 90%);
+
+/* bootstrap semantic signal colors*/
+$bsweb-signal-color-primary:         $colorname-sky-regular; //formerly known as accent-color
+$bsweb-signal-color-success:         $colorname-lemon-regular;
+$bsweb-signal-color-info:            $colorname-aqua-regular;
+$bsweb-signal-color-warning:         $colorname-pumkin-regular;
+$bsweb-signal-color-danger:          $colorname-pomegranate-shadow;
+
+/* additional semantic signal colors */
+/*system or process is running and happy  */
+$bsweb-signal-color-operative: $colorname-emerald-regular;
+/* advice is not as harsh as warning so the user knows he has to act */
+$bsweb-signal-color-advice: $colorname-sunflower-regular;
+
+
+$icon-hover-bg: $colorname-sky-extralight;
+
+//$submenu-item-color: #787878;
+$submenu-item-color: $colorname-slate-regular;
+$submenu-item-font-family: $font-semibold;
+$submenu-item-font-size: 14px;
+
+$group-row-bg: fade($colorname-clouds-light,80%);
+
+$separator-color: $colorname-clouds-shadow;
+
+$today-bg: fade($colorname-aqua-light, 80%);
+$weekend-bg: fade($colorname-emerald-extralight, 80%);
+// color "classes" assigned to context
+
+$colorclass-selected-area-bg-light: $colorname-clouds-light;
+$colorclass-selected-area-bg: $colorname-sky-extralight;
+$colorclass-hover-area-bg: $colorname-sky-ultralight;
+$colorclass-dragover-area-bg: $colorname-clouds-regular;
+$colorclass-view-customization-bar-bg: $colorname-silver-light;
+$colorclass-view-customization-bar-color: $colorname-asphalt-light;
+
+$bsweb-modal-box-shadow-inverted: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);
+$bsweb-modal-bg: rgba(0, 0, 0, 0.5);
+
+/* FIXME: should everyone use it for box shadows? and when */
+$default-box-shadow-color: rgba(0, 0, 0, 0.2);
+$default-box-shadow: 6px 6px 30px 0px rgba(0, 0, 0, 0.2);
+$default-box-shadow-hoff-inverted: -6px 6px 30px 0px rgba(0, 0, 0, 0.2);
+$default-box-shadow-light: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.012);
+
+$default-bar-height: 28px;
+$default-bar-font-size: 12px;
+
+
+$bsweb-font-onboarding: 'Segoe Script', Arial, sans-serif;
+
+/*if you dont know what margin to choose for your content use this*/
+$default-content-margin: 5px 10px 5px 10px;
+
+/* core font sizes  (schema from bootstrap  used in variables.less from bootstrap and bootstrap-type-custom.less) */
+$bsweb-font-size-base:          14px;
+$bsweb-font-size-xxxxlarge:     ceil(($bsweb-font-size-base * 5));    // ~70px
+$bsweb-font-size-xxlarge:       ceil(($bsweb-font-size-base * 1.57)); // ~22px
+$bsweb-font-size-large:         ceil(($bsweb-font-size-base * 1.25)); // ~18px
+$bsweb-font-size-small:         ceil(($bsweb-font-size-base * 0.85)); // ~12px
+$bsweb-font-size-xsmall:        ceil(($bsweb-font-size-base * 0.72)); // ~11px
+$bsweb-font-size-xxsmall:        ceil(($bsweb-font-size-base * 0.70)); // ~10px
+
+$bsweb-font-size-h1:            floor(($bsweb-font-size-base * 2.6)); // ~36px
+$bsweb-font-size-h2:            floor(($bsweb-font-size-base * 2.15)); // ~30px
+$bsweb-font-size-h3:            ceil(($bsweb-font-size-base * 1.7)); // ~24px
+$bsweb-font-size-h4:            ceil(($bsweb-font-size-base * 1.25)); // ~18px
+$bsweb-font-size-h5:            $bsweb-font-size-base;
+$bsweb-font-size-h6:            ceil(($bsweb-font-size-base * 0.85)); // ~12px
+
+/*the following variables dont exist in standard bootstrap and are "only" used in bootstrap-type-custom.less , the purpose is have exact font sizes for "small" fonts instead of percentage ones*/
+
+$bsweb-font-size-h1-small: ceil($bsweb-font-size-h1 * 0.65); // 24px
+$bsweb-font-size-h2-small: ceil($bsweb-font-size-h2 * 0.65); // 20px
+$bsweb-font-size-h3-small: ceil($bsweb-font-size-h3 * 0.65); // 16px
+$bsweb-font-size-h4-small: ceil($bsweb-font-size-h4 * 0.75); // 14px
+$bsweb-font-size-h5-small: ceil($bsweb-font-size-h5 * 0.75); // 11px
+$bsweb-font-size-h6-small: ceil($bsweb-font-size-h6 * 0.75); // 9px
+
+
+/*these first two values make no sense, but i dont change it because i am afraid of consequences */
+$logistics-font-size-h1-small: ceil(($bsweb-font-size-base * 1.42)); //20 but "should" be 40
+$logistics-font-size-h2-small: ceil(($bsweb-font-size-base * 1.14)); //16 but should be 32
+
+/*these are ok (based on logistics standard table) ..the use the abs-small css class */
+$logistics-font-size-h3-small: ceil(($bsweb-font-size-base * 2)); // 28px
+$logistics-font-size-h4-small: ceil(($bsweb-font-size-base * 1.42)); // 20px
+$logistics-font-size-h5-small: ceil(($bsweb-font-size-base * 1.14)); // 16px
+$logistics-font-size-h6-small: ceil(($bsweb-font-size-base * 0.78)); // 11px
+
+/* global list of zindeces (also used bootstraps variables.less) */
+/* put as many z-indeces here as you can */
+/* bsweb is general prefix for components all people use */
+
+/*dont change these because they are from bootstrap*/
+/* bootstrap z-indeces (bs stand foo bootstrap) */
+$bsweb-bs-zindex-navbar:            1000;
+$bsweb-bs-zindex-dropdown:          1000;
+$bsweb-bs-zindex-popover:           1060;
+$bsweb-bs-zindex-tooltip:           1070;
+$bsweb-bs-zindex-navbar-fixed:      1030;
+$bsweb-bs-zindex-modal-background:  1040;
+$bsweb-bs-zindex-modal:             1050;
+
+
+/*rolib ui z-indeces */
+$bsweb-virtual-scrollbar-color-container-zindex:     1;
+$bsweb-infinite-scrollbar-zindex:                    100;
+$bsweb-bom-legend-zindex:                            101;
+$bsweb-transport-order-legend-zindex:                101;
+$bsweb-modal-zindex:                                 1000;
+$bsweb-address-overlay-panel-zindex:                 1001;
+$bsweb-busy-indicator-zindex:                        9000000;
+$bsweb-action-bar-menu-zindex:                       9100000;
+$bsweb-onboarding-component-bg-zindex:               9999993;
+$bserb-onboarding-component-items-zindex:            9999994;
+$bsweb-onboarding-component-spotlight-zindex:        9999995;
+$bsweb-onboarding-component-elements-zindex:         9999996;
+$bsweb-onboarding-component-infos-zindex:            9999997;
+$bsweb-onboarding-component-overlay-zindex:          9999998;
+$bsweb-onboarding-component-buttons-zindex:          9999999;
+
+
+/* popovers from ng bootstrap */
+$bsweb-popover-title-font-size: $bsweb-font-size-small;
+$bsweb-popover-content-font-size: $bsweb-font-size-small;
+$bsweb-popover-title-padding: 12px 12px 0px 12px;
+$bsweb-popover-content-padding:  12px 12px 12px 12px;
+
+/* bsweb callouts derivedv from popovers  */
+$bsweb-callout-title-font-size: $bsweb-popover-title-font-size;
+$bsweb-callout-content-font-size: $bsweb-popover-content-font-size;
+$bsweb-callout-title-padding: $bsweb-popover-title-padding;
+$bsweb-callout-content-padding:  $bsweb-popover-content-padding;
+
+/* table formatting (e.g. bs-table.component.less */
+$bsweb-table-hover-color: $colorname-sky-ultralight;
+$bsweb-table-selected-color: $colorname-sky-extralight;
+$bsweb-tables-line-height: 26px;
+
+/*bsweb forms */
+$forms-input-label-text-color: $colorname-slate-regular;
+$forms-input-invalid-text-color:$colorname-pomegranate-shadow;
+$forms-input-invalid-text-size: $bsweb-font-size-h6;
+$forms-input-invalid-border-color:$colorname-pomegranate-shadow;
+$forms-input-invalid-boxshadow-color:$colorname-pomegranate-extralight;
+
+$bsweb-icon-size-xxsmall: 10px;
+$bsweb-icon-size-xsmall: 11px;
+$bsweb-icon-size-small: 14px;
+$bsweb-icon-size-medium: 20px;
+$bsweb-icon-size-big: 32px;
+$bsweb-icon-size-xbig: 64px;
