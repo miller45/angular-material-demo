@@ -5,21 +5,60 @@
 
 @include mat-core($tconfig);
 
-$primary: mat-palette($md-bsweb-sky, 500, A200, A700);
-$accent: mat-palette($md-bsweb-wisteria, A400, A200, A700); //$base-palette, $default: 500, $lighter: 100, $darker: 700
-$warn: mat-palette($md-bsweb-pumkin, A400, A200, A700);
+$primary: mat-palette($bsweb-colors-sky, 500, A200, A700);
+$accent: mat-palette($bsweb-colors-wisteria, A400, A200, A700); //$base-palette, $default: 500, $lighter: 100, $darker: 700
+$warn: mat-palette($bsweb-colors-pumkin, A400, A200, A700);
 
 $theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 
-$success: mat-palette($md-bsweb-lemon, A400, A200, A700);
-$info: mat-palette($md-bsweb-aqua, A400, A200, A700); //$base-palette, $default: 500, $lighter: 100, $darker: 700
-$danger: mat-palette($md-bsweb-pomegranate, A400, A200, A700);
+$success: mat-palette($bsweb-colors-lemon, A400, A200, A700);
+$info: mat-palette($bsweb-colors-aqua, A400, A200, A700); //$base-palette, $default: 500, $lighter: 100, $darker: 700
+$danger: mat-palette($bsweb-colors-pomegranate, A400, A200, A700);
 
 $custom-theme: mat-light-theme($success, $info, $danger);
 
 @include custom-material-theme($custom-theme);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //
 //.m2app-dark {

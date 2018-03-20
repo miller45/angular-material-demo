@@ -1,6 +1,7 @@
 @import '~@angular/material/theming';
+
 /* For use in src/lib/core/theming/_palette.scss */
-$md-bsweb-sky: (
+$bsweb-colors-sky: (
         50 : #e5f0fc,
         100 : #bddaf7,
         200 : #92c2f2,
@@ -33,7 +34,349 @@ $md-bsweb-sky: (
         )
 );
 
-$mat-bsw-bluedbg: (
+$bsweb-colors-lemon: (
+        50 : #f0f8e5,
+        100 : #d9ecbe,
+        200 : #c0e093,
+        300 : #a7d467,
+        400 : #94ca47,
+        500 : #81c126, // $colorname-lemon-regular
+        600 : #79bb22,
+        700 : #6eb31c,
+        800 : #64ab17,
+        900 : #519e0d,
+        A100 : #e1f0cb, // $colorname-lemon-extralight
+        A200 : #b3da7d, // $colorname-lemon-light
+        A400 : #81c126, // $colorname-lemon-regular
+        A700 : #6ea420, // $colorname-lemon-shadow
+        contrast: (
+                50 : $dark-primary-text,
+                100 : $dark-primary-text,
+                200 : $dark-primary-text,
+                300 : $dark-primary-text,
+                400 : $dark-primary-text,
+                500 : $dark-primary-text,
+                600 : $dark-primary-text,
+                700 : $light-primary-text,
+                800 : $light-primary-text,
+                900 : $light-primary-text,
+                A100 : $dark-primary-text,
+                A200 : $dark-primary-text,
+                A400 : $light-primary-text,
+                A700 : $light-primary-text,
+        )
+);
+
+$bsweb-colors-aqua: (
+        50 : #e6f5fa,
+        100 : #bfe7f3,
+        200 : #95d7eb,
+        300 : #6bc7e3,
+        400 : #4bbbdd,
+        500 : #2bafd7, // $colorname-aqua-regular
+        600 : #26a8d3,
+        700 : #209fcd,
+        800 : #1a96c7,
+        900 : #1086be,
+        A100 : #ccecf5, // $colorname-aqua-extralight
+        A200 : #80cfe7, // $colorname-aqua-light
+        A400 : #2bafd7, // $colorname-aqua-regular
+        A700 : #2595b7, // $colorname-aqua-shadow
+        contrast: (
+                50 : $dark-primary-text,
+                100 : $dark-primary-text,
+                200 : $dark-primary-text,
+                300 : $dark-primary-text,
+                400 : $dark-primary-text,
+                500 : $dark-primary-text,
+                600 : $light-primary-text,
+                700 : $light-primary-text,
+                800 : $light-primary-text,
+                900 : $light-primary-text,
+                A100 : $dark-primary-text,
+                A200 : $dark-primary-text,
+                A400 : $light-primary-text,
+                A700 : $light-primary-text,
+        )
+);
+
+
+$bsweb-colors-wisteria: (
+        50 : #f0e8f3,
+        100 : #d9c5e0,
+        200 : #c09ecb,
+        300 : #a777b6,
+        400 : #9459a7,
+        500 : #813c97,  // $colorname-wisteria-regular
+        600 : #79368f,
+        700 : #6e2e84,
+        800 : #64277a,
+        900 : #511a69,
+        A100 : #e1d0e6, // $colorname-wisteria-extralight
+        A200 : #b38ac1, // $colorname-wisteria-light
+        A400 : #813c97, // $colorname-wisteria-regular
+        A700 : #6e3380, // $colorname-wisteria-shadow
+        contrast: (
+                50 : $dark-primary-text,
+                100 : $dark-primary-text,
+                200 : $dark-primary-text,
+                300 : $dark-primary-text,
+                400 : $light-primary-text,
+                500 : $light-primary-text,
+                600 : $light-primary-text,
+                700 : $light-primary-text,
+                800 : $light-primary-text,
+                900 : $light-primary-text,
+                A100 : $dark-primary-text,
+                A200 : $light-primary-text,
+                A400 : $light-primary-text,
+                A700 : $light-primary-text,
+        )
+);
+
+
+$bsweb-colors-pomegranate: (
+        50 : #fce5e7,
+        100 : #f8bec2,
+        200 : #f4939a,
+        300 : #ef6871,
+        400 : #eb4752,
+        500 : #e82734, // $colorname-pomegranate-regular
+        600 : #e5232f,
+        700 : #e21d27,
+        800 : #de1721,
+        900 : #d80e15,
+        A100 : #f9cbce, // $colorname-pomegranate-extralight
+        A200 : #f17d85, // $colorname-pomegranate-light
+        A400 : #e82734, // $colorname-pomegranate-regular
+        A700 : #c5212c, // $colorname-pomegranate-shadow
+        contrast: (
+                50 : $dark-primary-text,
+                100 : $dark-primary-text,
+                200 : $dark-primary-text,
+                300 : $dark-primary-text,
+                400 : $light-primary-text,
+                500 : $light-primary-text,
+                600 : $light-primary-text,
+                700 : $light-primary-text,
+                800 : $light-primary-text,
+                900 : $light-primary-text,
+                A100 : $dark-primary-text,
+                A200 : $light-primary-text,
+                A400 : $light-primary-text,
+                A700 : $light-primary-text,
+        )
+);
+
+
+$bsweb-colors-pumkin: (
+        50 : #fef0e4,
+        100 : #fddabc,
+        200 : #fcc290,
+        300 : #faaa64,
+        400 : #f99742,
+        500 : #f88521,  //$colorname-pumkin-regular
+        600 : #f77d1d,
+        700 : #f67218,
+        800 : #f56814,
+        900 : #f3550b,
+        A100 : #fde2ca, //$colorname-pumkin-extralight
+        A200 : #fbb67a, //$colorname-pumkin-light
+        A400 : #f88521, //$colorname-pumkin-regular
+        A700 : #d3711c, //$colorname-pumkin-shadow:
+        contrast: (
+                50 : $dark-primary-text,
+                100 : $dark-primary-text,
+                200 : $dark-primary-text,
+                300 : $dark-primary-text,
+                400 : $dark-primary-text,
+                500 : $dark-primary-text,
+                600 : $dark-primary-text,
+                700 : $dark-primary-text,
+                800 : $dark-primary-text,
+                900 : $light-primary-text,
+                A100 : $dark-primary-text,
+                A200 : $dark-primary-text,
+                A400 : $light-primary-text,
+                A700 : $light-primary-text,
+        )
+);
+
+
+$bsweb-colors-sunflower: (
+        50 : #fef9e2,
+        100 : #fdf0b8,
+        200 : #fce688,
+        300 : #fadc58,
+        400 : #f9d535,
+        500 : #f8cd11, //$colorname-sunflower-regular
+        600 : #f7c80f,
+        700 : #f6c10c,
+        800 : #f5ba0a,
+        900 : #f3ae05,
+        A100 : #fdf3c6, //$colorname-sunflower-extralight
+        A200 : #fbe170, //$colorname-sunflower-light
+        A400 : #f8cd11, //$colorname-sunflower-regular
+        A700 : #d3ae0e, //$colorname-sunflower-shadow:
+        contrast: (
+                50 : $dark-primary-text,
+                100 : $dark-primary-text,
+                200 : $dark-primary-text,
+                300 : $dark-primary-text,
+                400 : $dark-primary-text,
+                500 : $dark-primary-text,
+                600 : $dark-primary-text,
+                700 : $dark-primary-text,
+                800 : $dark-primary-text,
+                900 : $dark-primary-text,
+                A100 : $dark-primary-text,
+                A200 : $dark-primary-text,
+                A400 : $dark-primary-text,
+                A700 : $dark-primary-text,
+        )
+);
+
+
+//rarely used or unused color palettes
+
+$bsweb-colors-asphalt: (
+        50 : #e7e9ec,
+        100 : #c2c8cf,
+        200 : #9aa4af,
+        300 : #71808e,
+        400 : #526476,
+        500 : #34495e, // $colorname-asphalt-regular
+        600 : #2f4256,
+        700 : #27394c,
+        800 : #213142,
+        900 : #152131,
+        A100 : #c2c8cf,
+        A200 : #85929e, // $colorname-asphalt-light
+        A400 : #34495e, // $colorname-asphalt-regular
+        A700 : #2c3e50, // $colorname-asphalt-shadow
+        contrast: (
+                50 : $dark-primary-text,
+                100 : $dark-primary-text,
+                200 : $dark-primary-text,
+                300 : $light-primary-text,
+                400 : $light-primary-text,
+                500 : $light-primary-text,
+                600 : $light-primary-text,
+                700 : $light-primary-text,
+                800 : $light-primary-text,
+                900 : $light-primary-text,
+                A100 : $dark-primary-text,
+                A200 : $light-primary-text,
+                A400 : $light-primary-text,
+                A700 : $light-primary-text,
+        )
+);
+
+$bsweb-colors-slate: (
+        50 : #eff1f1,
+        100 : #d7dbdc,
+        200 : #bcc3c5,
+        300 : #a1abae,
+        400 : #8d999c,
+        500 : #79878b, // $colorname-slate-regular
+        600 : #717f83,
+        700 : #667478,
+        800 : #5c6a6e,
+        900 : #49575b,
+        A100 : #d7dbdc, // NA
+        A200 : #afb7b9, // $colorname-slate-light
+        A400 : #79878b, // $colorname-slate-regular
+        A700 : #677376, // $colorname-slate-shadow
+        contrast: (
+                50 : $dark-primary-text,
+                100 : $dark-primary-text,
+                200 : $dark-primary-text,
+                300 : $dark-primary-text,
+                400 : $dark-primary-text,
+                500 : $dark-primary-text,
+                600 : $light-primary-text,
+                700 : $light-primary-text,
+                800 : $light-primary-text,
+                900 : $light-primary-text,
+                A100 : $dark-primary-text,
+                A200 : $dark-primary-text,
+                A400 : $light-primary-text,
+                A700 : $light-primary-text,
+        )
+);
+
+$bsweb-colors-silver: (
+        50 : #f8f8f8,
+        100 : #ededee,
+        200 : #e1e2e3,
+        300 : #d4d6d7,
+        400 : #cbcdcf,
+        500 : #c2c4c6, // $colorname-silver-regular
+        600 : #bcbec0,
+        700 : #b4b6b9,
+        800 : #acafb1,
+        900 : #9fa2a4,
+        A100 : #ededee, // NA
+        A200 : #dadcdd, // $colorname-silver-light
+        A400 : #c2c4c6, // $colorname-silver-regular
+        A700 : #a5a7a8, // $colorname-silver-shadow
+        contrast: (
+                50 : $dark-primary-text,
+                100 : $dark-primary-text,
+                200 : $dark-primary-text,
+                300 : $dark-primary-text,
+                400 : $dark-primary-text,
+                500 : $dark-primary-text,
+                600 : $dark-primary-text,
+                700 : $dark-primary-text,
+                800 : $dark-primary-text,
+                900 : $dark-primary-text,
+                A100 : $dark-primary-text,
+                A200 : $dark-primary-text,
+                A400 : $dark-primary-text,
+                A700 : $dark-primary-text,
+        )
+);
+
+$bsweb-colors-clouds: (
+        50 : #fdfdfd,
+        100 : #fafbfb,
+        200 : #f7f8f8,
+        300 : #f3f5f5,
+        400 : #f1f3f3,
+        500 : #eef1f1, // $colorname-clouds-regular
+        600 : #ecefef,
+        700 : #e9eded,
+        800 : #e7ebeb,
+        900 : #e2e7e7,
+        A100 : #fdfdfd, // NA
+        A200 : #f5f7f7, // $colorname-clouds-light
+        A400 : #eef1f1, // $colorname-clouds-regular
+        A700 : #cbcdcd, // $colorname-clouds-shadow
+        contrast: (
+                50 : $dark-primary-text,
+                100 : $dark-primary-text,
+                200 : $dark-primary-text,
+                300 : $dark-primary-text,
+                400 : $dark-primary-text,
+                500 : $dark-primary-text,
+                600 : $dark-primary-text,
+                700 : $dark-primary-text,
+                800 : $dark-primary-text,
+                900 : $dark-primary-text,
+                A100 : $dark-primary-text,
+                A200 : $dark-primary-text,
+                A400 : $dark-primary-text,
+                A700 : $dark-primary-text,
+        )
+);
+
+
+
+
+
+/**only used for debugging*/
+$bsweb-colors-bluedbg: (
         50: #FFDDDD,
         100: #FFAAAA,
         200: #FF8888,
@@ -65,175 +408,5 @@ $mat-bsw-bluedbg: (
                 A700: $light-primary-text,
         )
 );
-
-$md-bsweb-lemon: (
-        50 : #f0f8e5,
-        100 : #d9ecbe,
-        200 : #c0e093,
-        300 : #a7d467,
-        400 : #94ca47,
-        500 : #81c126,
-        600 : #79bb22,
-        700 : #6eb31c,
-        800 : #64ab17,
-        900 : #519e0d,
-        A100 : #e1f0cb, //$colorname-lemon-extralight
-        A200 : #b3da7d, //$colorname-lemon-light
-        A400 : #81c126, //$colorname-lemon-regular
-        A700 : #6ea420, //$colorname-lemon-shadow
-        contrast: (
-                50 : $dark-primary-text,
-                100 : $dark-primary-text,
-                200 : $dark-primary-text,
-                300 : $dark-primary-text,
-                400 : $dark-primary-text,
-                500 : $dark-primary-text,
-                600 : $dark-primary-text,
-                700 : $light-primary-text,
-                800 : $light-primary-text,
-                900 : $light-primary-text,
-                A100 : $dark-primary-text,
-                A200 : $dark-primary-text,
-                A400 : $light-primary-text,
-                A700 : $light-primary-text,
-        )
-);
-
-$md-bsweb-aqua: (
-        50 : #e6f5fa,
-        100 : #bfe7f3,
-        200 : #95d7eb,
-        300 : #6bc7e3,
-        400 : #4bbbdd,
-        500 : #2bafd7,
-        600 : #26a8d3,
-        700 : #209fcd,
-        800 : #1a96c7,
-        900 : #1086be,
-        A100 : #ccecf5,
-        A200 : #80cfe7,
-        A400 : #2bafd7,
-        A700 : #2595b7,
-        contrast: (
-                50 : $dark-primary-text,
-                100 : $dark-primary-text,
-                200 : $dark-primary-text,
-                300 : $dark-primary-text,
-                400 : $dark-primary-text,
-                500 : $dark-primary-text,
-                600 : $light-primary-text,
-                700 : $light-primary-text,
-                800 : $light-primary-text,
-                900 : $light-primary-text,
-                A100 : $dark-primary-text,
-                A200 : $dark-primary-text,
-                A400 : $light-primary-text,
-                A700 : $light-primary-text,
-        )
-);
-
-
-$md-bsweb-wisteria: (
-        50 : #f0e8f3,
-        100 : #d9c5e0,
-        200 : #c09ecb,
-        300 : #a777b6,
-        400 : #9459a7,
-        500 : #813c97,
-        600 : #79368f,
-        700 : #6e2e84,
-        800 : #64277a,
-        900 : #511a69,
-        A100 : #e1d0e6,
-        A200 : #b38ac1,
-        A400 : #813c97,
-        A700 : #6e3380,
-        contrast: (
-                50 : $dark-primary-text,
-                100 : $dark-primary-text,
-                200 : $dark-primary-text,
-                300 : $dark-primary-text,
-                400 : $light-primary-text,
-                500 : $light-primary-text,
-                600 : $light-primary-text,
-                700 : $light-primary-text,
-                800 : $light-primary-text,
-                900 : $light-primary-text,
-                A100 : $dark-primary-text,
-                A200 : $light-primary-text,
-                A400 : $light-primary-text,
-                A700 : $light-primary-text,
-        )
-);
-
-
-$md-bsweb-pomegranate: (
-        50 : #fce5e7,
-        100 : #f8bec2,
-        200 : #f4939a,
-        300 : #ef6871,
-        400 : #eb4752,
-        500 : #e82734,
-        600 : #e5232f,
-        700 : #e21d27,
-        800 : #de1721,
-        900 : #d80e15,
-        A100 : #f9cbce,
-        A200 : #f17d85,
-        A400 : #e82734,
-        A700 : #c5212c,
-        contrast: (
-                50 : $dark-primary-text,
-                100 : $dark-primary-text,
-                200 : $dark-primary-text,
-                300 : $dark-primary-text,
-                400 : $light-primary-text,
-                500 : $light-primary-text,
-                600 : $light-primary-text,
-                700 : $light-primary-text,
-                800 : $light-primary-text,
-                900 : $light-primary-text,
-                A100 : $dark-primary-text,
-                A200 : $light-primary-text,
-                A400 : $light-primary-text,
-                A700 : $light-primary-text,
-        )
-);
-
-
-$md-bsweb-pumkin: (
-        50 : #fef0e4,
-        100 : #fddabc,
-        200 : #fcc290,
-        300 : #faaa64,
-        400 : #f99742,
-        500 : #f88521,
-        600 : #f77d1d,
-        700 : #f67218,
-        800 : #f56814,
-        900 : #f3550b,
-        A100 : #fde2ca,
-        A200 : #fbb67a,
-        A400 : #f88521,
-        A700 : #d3711c,
-        contrast: (
-                50 : $dark-primary-text,
-                100 : $dark-primary-text,
-                200 : $dark-primary-text,
-                300 : $dark-primary-text,
-                400 : $dark-primary-text,
-                500 : $dark-primary-text,
-                600 : $dark-primary-text,
-                700 : $dark-primary-text,
-                800 : $dark-primary-text,
-                900 : $light-primary-text,
-                A100 : $dark-primary-text,
-                A200 : $dark-primary-text,
-                A400 : $light-primary-text,
-                A700 : $light-primary-text,
-        )
-);
-
-
 
 
