@@ -61,6 +61,12 @@ export class AppComponent {
         {name: 'Danger', color: 'danger'}
     ];
 
+
+    isDisabled = false;
+    clickCounter = 0;
+    toggleDisable = false;
+
+
     constructor(private _dialog: MatDialog, private _snackbar: MatSnackBar) {
         // Update the value for the progress-bar on an interval.
         setInterval(() => {
@@ -87,6 +93,18 @@ export class AppComponent {
     set tickInterval(v) {
         this.slider.tickInterval = Number(v);
     }
+
+    actionX() {
+    }
+    action1() {
+    }
+    action2() {
+    }
+    action3() {
+    }
+    action4() {
+    }
+
 }
 
 

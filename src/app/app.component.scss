@@ -22,7 +22,6 @@ mat-sidenav-container.m2app-dark {
   flex: 1 1 auto;
 }
 
-
 .app-fab {
   position: fixed !important;
   bottom: 20px;
@@ -44,12 +43,13 @@ mat-sidenav-container.m2app-dark {
   padding: 0;
   min-width: 50px;
 }
+
 .app-button {
   margin: 5px;
 }
 
 .app-list {
-  border: 1px solid rgba(0,0,0,0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .app-progress {
@@ -58,7 +58,7 @@ mat-sidenav-container.m2app-dark {
 
 .example-h2 {
   margin: 10px 0;
-  color: rgba(0,0,0,.54);
+  color: rgba(0, 0, 0, .54);
 }
 
 .example-section {
@@ -112,5 +112,12 @@ mat-chip {
   .mat-card-actions {
     display: flex;
     flex-direction: column;
+  }
+}
+
+button[mat-fab] {
+  a {
+    text-decoration: none;
+    color: white;
   }
 }
