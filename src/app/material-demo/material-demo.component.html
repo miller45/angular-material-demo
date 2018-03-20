@@ -1,0 +1,67 @@
+<a [routerLink]="'/'" mat-button>goto default demo </a>
+
+<button mat-raised-button (click)="setDemos('normal')">Toggle Normal Demos</button>
+<button mat-raised-button (click)="setDemos('other')">Toggle Other Demos</button>
+<button mat-raised-button (click)="setDemos('input')">Toggle Input Demos</button>
+<div class="material-demo-frame" *ngIf="isNormalDemo">
+
+
+
+    <!--<mat-toolbar color="primary">focus-origin-demo</mat-toolbar>-->
+    <!--<focus-origin-demo></focus-origin-demo>-->
+    <mat-toolbar color="primary">slide-toggle-demo</mat-toolbar>
+    <slide-toggle-demo></slide-toggle-demo>
+
+    <mat-toolbar color="primary">autocomplete-demo</mat-toolbar>
+    <autocomplete-demo></autocomplete-demo>
+    <!--<div class="demo-sep"></div>-->
+    <!--<baseline-demo></baseline-demo>-->
+    <mat-toolbar color="primary">button-demo</mat-toolbar>
+    <button-demo></button-demo>
+    <mat-toolbar color="primary">button-toggle-demo</mat-toolbar>
+    <button-toggle-demo></button-toggle-demo>
+
+    <mat-toolbar color="primary">fab-speed-dial-demo</mat-toolbar>
+    <fab-speed-dial-demo></fab-speed-dial-demo>
+    <mat-toolbar color="primary">card-demo</mat-toolbar>
+    <card-demo></card-demo>
+    <mat-toolbar color="primary">mat-checkbox-demo</mat-toolbar>
+    <mat-checkbox-demo></mat-checkbox-demo>
+    <mat-toolbar color="primary">chips-demo</mat-toolbar>
+    <chips-demo></chips-demo>
+    <mat-toolbar color="primary">datepicker-demo</mat-toolbar>
+    <datepicker-demo></datepicker-demo>
+    <mat-toolbar color="primary">drawer-demo</mat-toolbar>
+    <drawer-demo></drawer-demo>
+    <mat-toolbar color="primary">expansion-demo</mat-toolbar>
+    <expansion-demo></expansion-demo>
+
+    <mat-toolbar color="primary">mat-icon-demo</mat-toolbar>
+    <mat-icon-demo></mat-icon-demo>
+
+
+
+</div>
+
+<div class="material-demo-frame" *ngIf="isOtherDemo">
+    <mat-toolbar color="primary">mat-checkbox-demo-nested-checklist</mat-toolbar>
+    <mat-checkbox-demo-nested-checklist></mat-checkbox-demo-nested-checklist>
+    <mat-toolbar color="primary">grid-list-demo</mat-toolbar>
+    <grid-list-demo></grid-list-demo>
+    <mat-toolbar color="primary">list-demo</mat-toolbar>
+    <list-demo></list-demo>
+    <mat-toolbar color="primary">toolbar-demo</mat-toolbar>
+    <toolbar-demo></toolbar-demo>
+    <mat-toolbar color="primary">menu-demo</mat-toolbar>
+    <menu-demo></menu-demo>
+    <!--<mat-toolbar color="primary">overlay-demo</mat-toolbar>-->
+    <!--<overlay-demo></overlay-demo>-->
+
+</div>
+
+
+<div class="material-demo-frame" *ngIf="isInputDemo">
+    <button mat-raised-button (click)="toggleInputDemos()">Toggle Input Demos</button>
+    <mat-toolbar color="primary">input-demo</mat-toolbar>
+    <input-demo></input-demo>
+</div>

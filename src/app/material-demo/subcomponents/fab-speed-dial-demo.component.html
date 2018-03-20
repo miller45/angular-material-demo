@@ -1,0 +1,13 @@
+<section>
+    <smd-fab-speed-dial  [direction]="'up'" [animationMode]="'fling'" >
+        <smd-fab-trigger>
+            <button mat-fab (click)="actionX()"><mat-icon>check</mat-icon></button>
+        </smd-fab-trigger>
+
+        <smd-fab-actions>
+            <button mat-mini-fab (click)="action1()"><mat-icon>add</mat-icon></button>
+            <button mat-mini-fab (click)="action2()"><mat-icon>edit</mat-icon></button>
+            <button mat-mini-fab (click)="action3()"><mat-icon>menu</mat-icon></button>
+        </smd-fab-actions>
+    </smd-fab-speed-dial>
+</section>

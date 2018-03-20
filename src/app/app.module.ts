@@ -5,9 +5,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 
+import {AppComponent} from './app.component';
+
+import {MaterialDemoModule} from './material-demo/material-demo.module';
+import {AppRoutingModule} from './app.routing.module';
+import {RolibMaterialUIModule} from './rolib/ui-material/rolib-ui-material.module';
 import {AppMaterialModule} from './app.material.module';
-import {AppComponent, DialogContentComponent} from './app.component';
-import {RolibMaterialUIModule} from '../rolib/ui-material/rolib-ui-material.module';
+import {AppDefaultDemoComponent, DialogContentComponent} from './app-default-demo.component';
 
 @NgModule({
     imports: [
@@ -15,9 +19,11 @@ import {RolibMaterialUIModule} from '../rolib/ui-material/rolib-ui-material.modu
         FormsModule,
         AppMaterialModule,
         RolibMaterialUIModule,
-        BrowserAnimationsModule
+        MaterialDemoModule,
+        BrowserAnimationsModule,
+        AppRoutingModule
     ],
-    declarations: [AppComponent, DialogContentComponent],
+    declarations: [AppComponent, DialogContentComponent, AppDefaultDemoComponent],
     entryComponents: [DialogContentComponent],
     bootstrap: [AppComponent],
 })
