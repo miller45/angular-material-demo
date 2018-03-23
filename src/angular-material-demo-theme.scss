@@ -1,12 +1,12 @@
 @import '~@angular/material/theming';
 @import "bsweb-pallettes";
 @import "bsweb-typography";
-@import "custom-material-theme";
+@import "bsweb-theming";
 
 @include mat-core($tconfig);
 
-$primary: mat-palette($bsweb-colors-sky, 500, A200, A700);
-$accent: mat-palette($bsweb-colors-wisteria, A400, A200, A700); //$base-palette, $default: 500, $lighter: 100, $darker: 700
+$primary: mat-palette($bsweb-colors-sky, 500, A200, A700); //$base-palette, $default: 500, $lighter: 100, $darker: 700
+$accent: mat-palette($bsweb-colors-sky, A700, A200, A900);
 $warn: mat-palette($bsweb-colors-pumkin, A400, A200, A700);
 
 $theme: mat-light-theme($primary, $accent, $warn);
@@ -22,51 +22,26 @@ $custom-theme: mat-light-theme($success, $info, $danger);
 @include custom-material-theme($custom-theme);
 
 
+$darktheme-bg: #D3D3D3;
+$darktheme-brighter-bg: lighten($darktheme-bg,11.5%);
+$darktheme-darker-bg: darken($darktheme-bg, 3%);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.contenttheme-dark {
+  .mat-card {
+    background-color: $darktheme-bg
+  }
+  //
+  //$primary: mat-palette($bsweb-colors-sky, 500, A200, A700); //$base-palette, $default: 500, $lighter: 100, $darker: 700
+  //$accent: mat-palette($bsweb-colors-sky, A700, A200, A900);
+  //$warn: mat-palette($bsweb-colors-pumkin, A400, A200, A700);
+  //
+  //$theme: mat-dark-theme($primary, $accent, $warn);
+  //
+  //@include angular-material-theme($theme);
+}
 
 //
-//.m2app-dark {
-//  $primary: mat-palette($mat-pink, 700, 500, 900);
-//  $accent: mat-palette($mat-blue-grey, A200, A100, A400);
-//  $warn: mat-palette($mat-red, A700);
 //
-//  $theme: mat-dark-theme($primary, $accent, $warn);
-//
-//  @include angular-material-theme($theme);
+//mat-sidenav-container.contenttheme-dark {
+//  background: $darktheme-bg;
 //}

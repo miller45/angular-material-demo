@@ -1,10 +1,11 @@
-import {Component, Optional} from '@angular/core';
+import {Component, Optional, ViewEncapsulation} from '@angular/core';
 import {MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
 
 
 @Component({
     templateUrl: './app-default-demo.component.html',
     styleUrls: ['./app-default-demo.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class AppDefaultDemoComponent {
     isDarkTheme = false;

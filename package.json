@@ -50,6 +50,9 @@
     "protractor": "^5.3.0",
     "ts-node": "^3.1.0",
     "tslint": "^5.9.1",
-    "typescript": "^2.6.2"
+    "typescript": "^2.6.2",
+    "less": "2.7.2",
+    "less-plugin-clean-css": "1.5.1",
+    "less-plugin-npm-import": "2.1.0"
   }
 }

@@ -99,8 +99,122 @@
 
 }
 
+
+@mixin mat-custom-radio-theme($theme) {
+  $success: map-get($theme, primary);
+  $info: map-get($theme, accent);
+  $danger: map-get($theme, warn);
+
+  .mat-radio-button {
+    &.mat-success {
+      @include mat-radio-color($success);
+    }
+
+    &.mat-info {
+      @include mat-radio-color($info);
+    }
+
+    &.mat-danger {
+      @include mat-radio-color($danger);
+    }
+  }
+}
+
+@mixin mat-custom-checkbox-theme($theme) {
+  $success: map-get($theme, primary);
+  $info: map-get($theme, accent);
+  $danger: map-get($theme, warn);
+
+  .mat-checkbox-indeterminate, .mat-checkbox-checked {
+    &.mat-success .mat-checkbox-background {
+      background-color: mat-color($success);
+    }
+
+    &.mat-info .mat-checkbox-background {
+      background-color: mat-color($info);
+    }
+
+    &.mat-danger .mat-checkbox-background {
+      background-color: mat-color($danger);
+    }
+  }
+}
+
+
+@mixin mat-custom-slider-theme($theme) {
+  $success: map-get($theme, primary);
+  $info: map-get($theme, accent);
+  $danger: map-get($theme, warn);
+
+  .mat-success {
+    @include _mat-slider-inner-content-theme($success);
+  }
+
+  .mat-info {
+    @include _mat-slider-inner-content-theme($info);
+  }
+
+  .mat-danger {
+    @include _mat-slider-inner-content-theme($danger);
+  }
+
+}
+
+
+@mixin mat-custom-slide-toggle-theme($theme) {
+  $is-dark: map_get($theme, is-dark);
+  $success: map-get($theme, primary);
+  $info: map-get($theme, accent);
+  $danger: map-get($theme, warn);
+
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  // Color hues based on the specs, which prescribe different hues for dark and light themes
+  // https://material.google.com/components/selection-controls.html#selection-controls-switch
+  $thumb-normal-hue: if($is-dark, 400, 50);
+  $thumb-checked-hue: if($is-dark, 200, 500);
+  $thumb-disabled-hue: if($is-dark, 800, 400);
+
+  $bar-normal-color: mat-color($foreground, disabled);
+  $bar-disabled-color: if($is-dark, rgba(white, 0.12), rgba(black, 0.1));
+
+  // Ripple colors are based on the current palette and the state of the slide-toggle.
+  // See https://material.google.com/components/selection-controls.html#selection-controls-switch
+  $ripple-checked-opacity: 0.12;
+  $ripple-unchecked-color: mat-color($foreground, base, if($is-dark, 0.12, 0.06));
+  $ripple-success-color: mat-color($success, $thumb-checked-hue, $ripple-checked-opacity);
+  $ripple-info-color: mat-color($info, $thumb-checked-hue, $ripple-checked-opacity);
+  $ripple-danger-color: mat-color($danger, $thumb-checked-hue, $ripple-checked-opacity);
+
+  .mat-slide-toggle {
+    &.mat-success{
+      @include _mat-slide-toggle-checked($success, $thumb-checked-hue);
+      @include _mat-slide-toggle-ripple($success, $ripple-unchecked-color, $ripple-success-color);
+    }
+
+    &.mat-info {
+      @include _mat-slide-toggle-checked($info, $thumb-checked-hue);
+      @include _mat-slide-toggle-ripple($info, $ripple-unchecked-color,  $ripple-info-color);
+    }
+
+    &.mat-danger {
+      @include _mat-slide-toggle-checked($danger, $thumb-checked-hue);
+      @include _mat-slide-toggle-ripple($danger, $ripple-unchecked-color, $ripple-danger-color);
+    }
+
+  }
+
+
+}
+
+
 @mixin custom-material-theme($theme) {
   @include mat-custom-icon-theme($theme);
   @include mat-custom-chips-theme($theme);
   @include mat-custom-button-theme($theme);
+  @include mat-custom-radio-theme($theme);
+  @include mat-custom-checkbox-theme($theme);
+  @include mat-custom-slider-theme($theme);
+  @include mat-custom-slide-toggle-theme($theme);
 }

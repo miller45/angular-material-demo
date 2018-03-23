@@ -4,7 +4,7 @@ var tildeImporter = require('node-sass-tilde-importer');
 var material_scss = "./src/styles.scss";
 var material_css = "./dist/styles.css";
 var example_scss = "./src/example.scss";
-var example_css = "./dist/example.css";
+var example_css = "./dist/scss-example.css";
 
 function writeTextToFile(file, text) {
     fs.writeFile(file, text, function (err) {

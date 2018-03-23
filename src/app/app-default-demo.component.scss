@@ -1,9 +1,32 @@
 body {
   margin: 0;
 }
-mat-sidenav-container.m2app-dark {
-  background: black;
+
+
+
+.example {
+  h2 {
+    margin: 10px 0;
+  }
+  mat-checkbox {
+    margin: 0 10px;
+  }
 }
+
+.example-layout-flex-rows {
+  display: flex;
+  flex-flow: row;
+  height: 60px;
+}
+
+.example-layout-flex-cols {
+  display: flex;
+  flex-flow: column;
+  height: auto;
+}
+
+
+
 
 .app-content {
   padding: 5px;
@@ -17,9 +40,6 @@ mat-sidenav-container.m2app-dark {
   min-width: 200px;
 }
 
-.app-content mat-checkbox {
-  margin: 10px;
-}
 
 .app-toolbar-filler {
   flex: 1 1 auto;
@@ -61,7 +81,6 @@ mat-sidenav-container.m2app-dark {
 
 .example-h2 {
   margin: 10px 0;
-  color: rgba(0, 0, 0, .54);
 }
 
 .example-section {
@@ -71,8 +90,16 @@ mat-sidenav-container.m2app-dark {
   height: 60px;
 }
 
+.example-layout-no-flex {
+  height: 60px;
+
+  mat-checkbox, mat-radio-button {
+    margin: 0 10px;
+  }
+}
+
 .example-margin {
-  margin: 10px;
+  margin: 0 10px;
 }
 
 .mat-slider-horizontal {

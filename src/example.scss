@@ -6,5 +6,30 @@
         font-style: italic;
       }
     }
+    .right-side {
+      label, p {
+        font-style: italic;
+      }
+    }
   }
 }
+
+
+@mixin makeStyle($borderthick) {
+  .custom-style {
+    button {
+      font-weight: bold;
+      border: $borderthick solid red;
+    }
+  }
+}
+.context1{
+  @include makeStyle(1px);
+}
+
+.context2{
+  @include makeStyle(4px);
+}
+
+
+

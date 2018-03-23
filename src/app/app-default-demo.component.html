@@ -1,4 +1,4 @@
-<mat-sidenav-container [class.m2app-dark]="isDarkTheme">
+<mat-sidenav-container [class.contenttheme-dark]="isDarkTheme">
     <a name="top"></a>
     <mat-sidenav #sidenav mode="over" class="app-sidenav" color="primary">
         <mat-toolbar>
@@ -59,6 +59,14 @@
                 <button class="app-button" mat-button color="info">FLAT INFO</button>
                 <button class="app-button" mat-button color="danger">FLAT DANGER</button>
 
+            </mat-card-content>
+        </mat-card>
+        <!-- /Material Button -->
+
+        <mat-card>
+            <mat-card-content>
+                <h2 class="example-h2">Material Button</h2>
+
                 <button class="app-button" mat-raised-button mat-tooltip="This is a tooltip!">RAISED</button>
                 <button class="app-button" mat-raised-button color="primary">PRIMARY RAISED</button>
                 <button class="app-button" mat-raised-button color="accent">ACCENT RAISED</button>
@@ -87,11 +95,36 @@
         <mat-card>
             <mat-card-content>
                 <h2 class="example-h2">Material Checkbox</h2>
-                <mat-checkbox color="warn">Unchecked</mat-checkbox>
-                <mat-checkbox [checked]="true">Checked</mat-checkbox>
-                <mat-checkbox [indeterminate]="true">Indeterminate</mat-checkbox>
-                <mat-checkbox [disabled]="true">Disabled</mat-checkbox>
+
+                <section class="example-layout-no-flex">
+
+                    <mat-checkbox color="warn">Unchecked</mat-checkbox>
+                    <mat-checkbox [checked]="true">Checked</mat-checkbox>
+                    <mat-checkbox [indeterminate]="true">Indeterminate</mat-checkbox>
+                    <mat-checkbox [disabled]="true">Disabled</mat-checkbox>
+                </section>
+
             </mat-card-content>
+        </mat-card>
+
+        <!-- Material Checkbox -->
+        <mat-card>
+            <div class="example">
+                <h2>Material Checkbox with flex layout row</h2>
+                <div class="example-layout-flex-rows">
+                    <mat-checkbox >Unchecked</mat-checkbox>
+                    <mat-checkbox [checked]="true">Checked</mat-checkbox>
+                    <mat-checkbox [indeterminate]="true">Indeterminate</mat-checkbox>
+                    <mat-checkbox [disabled]="true">Disabled</mat-checkbox>
+                </div>
+                <h2>Material Checkbox with flex layout cols</h2>
+                <div class="example-layout-flex-cols">
+                    <mat-checkbox  >Unchecked</mat-checkbox>
+                    <mat-checkbox  [checked]="true">Checked</mat-checkbox>
+                    <mat-checkbox  [indeterminate]="true">Indeterminate</mat-checkbox>
+                    <mat-checkbox  [disabled]="true">Disabled</mat-checkbox>
+                </div>
+            </div>
         </mat-card>
         <!-- /Material Checkbox -->
 
