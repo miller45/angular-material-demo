@@ -1,5 +1,6 @@
-import {Component, Optional, ViewEncapsulation} from '@angular/core';
+import {Component, HostListener, Optional, ViewEncapsulation} from '@angular/core';
 import {MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
+import {Key} from 'ts-keycode-enum';
 
 
 @Component({
@@ -68,6 +69,9 @@ export class AppDefaultDemoComponent {
 
 
     constructor(private _dialog: MatDialog, private _snackbar: MatSnackBar) {
+
+        this.disableStyleInHead('link-bootstrap-cdn'); // only one bootstrap framework must be enabled on start (there two in index html)
+
         // Update the value for the progress-bar on an interval.
         setInterval(() => {
             this.progress = (this.progress + Math.floor(Math.random() * 4) + 1) % 100;
@@ -82,8 +86,8 @@ export class AppDefaultDemoComponent {
         })
     }
 
-    showSnackbar() {
-        this._snackbar.open('YUM SNACKS', 'CHEW');
+    showSnackbar(message: string, action: string) {
+        this._snackbar.open(message, action, {duration: 1000});
     }
 
     get tickInterval(): number | 'auto' {
@@ -94,15 +98,59 @@ export class AppDefaultDemoComponent {
         this.slider.tickInterval = Number(v);
     }
 
-    actionX() {
+
+    /* disable the style that is included in page head**/
+    private disableStyleInHead(id: string) {
+        const oldStyleEle: any = document.getElementById(id);
+        if (oldStyleEle != null) {
+            oldStyleEle.disabled = true;
+        }
     }
-    action1() {
+
+    /* (re)enable the style that is included in page head**/
+    private enableStyleInHead(id: string) {
+        const oldStyleEle: any = document.getElementById(id);
+        if (oldStyleEle != null) {
+            oldStyleEle.disabled = false;
+        }
     }
-    action2() {
-    }
-    action3() {
-    }
-    action4() {
+
+    @HostListener('document:keydown', ['$event'])
+    public keyDown(event: KeyboardEvent) {
+        if (event.ctrlKey && event.shiftKey) {
+            // <link id="link-bsweb-bootstrap-cdn" href="https://bsw/bswebcache/cdn/bootstrap/3.3.7-mod1/bootstrap.css" rel="stylesheet" >
+            // <link id="link-bootstrap-cdn"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+            switch (event.keyCode) {
+                case Key.F1:
+                    this.enableStyleInHead('link-bsweb-bootstrap-cdn');
+                    this.disableStyleInHead('link-bootstrap-cdn');
+                    this.showSnackbar('bsweb-boostrap', 'Ok');
+                    break;
+                case Key.F2:
+                    this.disableStyleInHead('link-bsweb-bootstrap-cdn');
+                    this.enableStyleInHead('link-bootstrap-cdn');
+                    this.showSnackbar('original bootstrap ', 'Ok');
+                    break;
+                case Key.F3:
+                    this.disableStyleInHead('link-bsweb-bootstrap-cdn');
+                    this.disableStyleInHead('link-bootstrap-cdn');
+                    this.showSnackbar('no bootstrap', 'Ok');
+                    break;
+                case Key.F9:
+                    this.disableStyleInHead('link-material-fixes');
+                    this.showSnackbar('no material fixes', 'Ok');
+                    break;
+                case Key.F10:
+                    this.enableStyleInHead('link-material-fixes');
+                    this.showSnackbar('yes material fixes', 'Ok');
+                    break;
+                // case Key.M:
+                //     this.enableStyleInHead('link-bootstraplocal');
+                //     this.disableStyleInHead('link-bootstrapcdn');
+                //     break;
+            }
+        }
+
     }
 
 }
