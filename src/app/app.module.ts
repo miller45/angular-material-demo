@@ -12,6 +12,7 @@ import {AppRoutingModule} from './app.routing.module';
 import {RolibMaterialUIModule} from './rolib/ui-material/rolib-ui-material.module';
 import {AppMaterialModule} from './app.material.module';
 import {AppDefaultDemoComponent, DialogContentComponent} from './app-default-demo.component';
+import {ChartsDemoModule} from './charts-demo/charts-demo.module';
 
 @NgModule({
     imports: [
@@ -21,6 +22,7 @@ import {AppDefaultDemoComponent, DialogContentComponent} from './app-default-dem
         RolibMaterialUIModule,
         MaterialDemoModule,
         BrowserAnimationsModule,
+        ChartsDemoModule,
         AppRoutingModule
     ],
     declarations: [AppComponent, DialogContentComponent, AppDefaultDemoComponent],

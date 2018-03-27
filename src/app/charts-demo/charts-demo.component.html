@@ -1,0 +1,5 @@
+<button (click)="addPoint()">Add Point!</button>
+<button (click)="toggleVisibility()">Toggle Visibility</button>
+<div *ngIf="isVisible">
+    <div [chart]="chart"></div>
+</div>
