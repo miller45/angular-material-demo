@@ -1,0 +1,194 @@
+/*
+Background:
+Material css styles do *not* disturb other css styles like bootstrap
+Bootstrap css styles *do* disturb other css styles (third parties)
+Bootstrap does not officially support third party add-ons/plugins (see: https://getbootstrap.com/docs/3.3/getting-started/#third-parties),
+but they give tips to make it happen though.
+In bsweb we need coexistence for bootstrap.css and material.css styles.
+
+Methods:
+The chapter about third party support from bootstrap (https://getbootstrap.com/docs/3.3/getting-started/#third-parties)
+says that e.g. Some third party....conflict with Bootstrap due to * { box-sizing: border-box; }.
+Material for example expects to box-sizing: content-box.
+So as bootstrap "aggressively" styles everything (and destroys the layout of material css), we have to set the box-sizing for every material control explicitly
+(this is a recommended method from the bootstrap guys).
+I also adjusted the margins of h1-h6 ***inside*** material components, so they look like expected.
+
+*/
+
+/*
+set border-sizing to border-box and some margins/paddings for material tags
+Tips: scroll to the end to see what is changed, because this list starts with a huge list of all material tags
+(I extracted the list of tags from angular material2 components source code from git hub. I used notepad++ and searched for selector in all *.ts files )
+*/
+input[matAutocomplete], textarea[matAutocomplete],
+mat-autocomplete,
+mat-button-toggle-group,
+mat-button-toggle,
+mat-card-content,
+mat-card-title, [mat-card-title], [matCardTitle],
+mat-card-subtitle, [mat-card-subtitle], [matCardSubtitle],
+mat-card-actions,
+mat-card-footer,
+[mat-card-image], [matCardImage],
+[mat-card-sm-image], [matCardImageSmall],
+[mat-card-md-image], [matCardImageMedium],
+[mat-card-lg-image], [matCardImageLarge],
+[mat-card-xl-image], [matCardImageXLarge],
+[mat-card-avatar], [matCardAvatar],
+mat-card,
+mat-card-header,
+mat-card-title-group,
+mat-checkbox,
+input[matChipInputFor],
+mat-chip-list,
+mat-basic-chip, [mat-basic-chip],
+mat-basic-chip, [mat-basic-chip], mat-chip, [mat-chip],
+[matChipRemove],
+[mat-line], [matLine],
+mat-optgroup,
+mat-option,
+[mat-ripple], [matRipple],
+mat-pseudo-checkbox,
+[mat-calendar-body],
+mat-calendar,
+input[matDatepicker],
+mat-datepicker-toggle,
+mat-datepicker-content,
+mat-datepicker,
+mat-month-view,
+mat-year-view,
+mat-dialog-container,
+button[mat-dialog-close], button[matDialogClose],
+[mat-dialog-title], [matDialogTitle],
+[mat-dialog-content], mat-dialog-content, [matDialogContent],
+[mat-dialog-actions], mat-dialog-actions, [matDialogActions],
+cdk-accordion, [cdk-accordion],
+mat-accordion,
+mat-expansion-panel-header,
+mat-panel-description,
+mat-panel-title,
+mat-expansion-panel,
+mat-action-row,
+mat-error,
+mat-input-container,
+mat-form-field,
+.mat-form-field,
+mat-hint,
+mat-placeholder,
+[matPrefix],
+[matSuffix],
+mat-grid-list,
+mat-grid-tile,
+mat-grid-tile-header, mat-grid-tile-footer,
+[mat-grid-avatar], [matGridAvatar],
+mat-grid-tile-header,
+mat-grid-tile-footer,
+mat-icon,
+textarea[mat-autosize], textarea[matTextareaAutosize],
+input[matInput], textarea[matInput],
+mat-divider,
+mat-list, mat-nav-list,
+mat-list,
+mat-nav-list,
+mat-divider,
+[mat-list-avatar], [matListAvatar],
+[mat-list-icon], [matListIcon],
+[mat-subheader], [matSubheader],
+mat-list-item, a[mat-list-item],
+mat-list-option,
+mat-selection-list,
+mat-paginator,
+mat-progress-bar,
+mat-progress-spinner,
+mat-spinner,
+mat-radio-group,
+mat-radio-button,
+mat-select-trigger,
+mat-select,
+mat-drawer-content,
+mat-drawer,
+mat-drawer-container,
+mat-sidenav-content,
+mat-sidenav,
+mat-sidenav-container,
+mat-slide-toggle,
+mat-slider,
+simple-snack-bar,
+snack-bar-container,
+[mat-sort-header],
+[matSort],
+mat-step-header,
+[matStepLabel],
+button[matStepperNext],
+button[matStepperPrevious],
+mat-step,
+[matStepper],
+mat-horizontal-stepper,
+mat-vertical-stepper,
+[matCellDef],
+[matHeaderCellDef],
+[matColumnDef],
+mat-header-cell,
+mat-cell,
+[matHeaderRowDef],
+[matRowDef],
+mat-header-row,
+mat-row,
+mat-table,
+mat-ink-bar,
+mat-tab-body,
+mat-tab-group,
+mat-tab-header,
+[matTabLabelWrapper],
+[mat-tab-label], [matTabLabel],
+[mat-tab-nav-bar],
+[mat-tab-link], [matTabLink],
+mat-tab,
+mat-toolbar-row,
+mat-toolbar,
+[mat-tooltip], [matTooltip],
+.mat-input-wrapper, .mat-input-flex, .mat-input-infix, .mat-input-element, .mat-input-placeholder-wrapper,
+mat-card-content table,
+mat-card-content tr,
+mat-card-content td,
+mat-card-content tbody,
+mat-card-content thead,
+mat-card-content tfoot {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  h1, h2, h3, h4, h5, h6 {
+    margin: initial;
+    -webkit-margin-after: 1.33em;
+  }
+  div {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+}
+
+mat-card-content table {
+  border-spacing: initial;
+}
+mat-card-content td,
+mat-card-content th {
+  padding:1px;
+}
+mat-card label {
+  display:initial;
+}
+
+button[mat-button], a[mat-button],
+button[mat-raised-button], a[mat-raised-button],
+button[mat-icon-button], a[mat-icon-button],
+button[mat-fab], a[mat-fab],
+button[mat-mini-fab], a[mat-mini-fab],
+button[mat-button], button[mat-raised-button], button[mat-icon-button],
+a[mat-button], a[mat-raised-button], a[mat-icon-button], a[mat-fab], a[mat-mini-fab],
+mat-menu,
+[mat-menu-item],
+[mat-menu-trigger-for], [matMenuTriggerFor] {
+  box-sizing: border-box;
+}
