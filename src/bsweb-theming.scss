@@ -3,12 +3,15 @@
  */
 
 @import '~@angular/material/theming';
-// Include this empty mixin for consistency with the other components.
+
+// theming for extra colors success,info,attention (not included in orginial material css styles
+// all themes here a bundled the bottom mixin called custom-material-theme
+// it is called by generate-material-theme.css
 
 @mixin mat-custom-icon-theme($theme) {
   $success: map-get($theme, primary);
   $info: map-get($theme, accent);
-  $danger: map-get($theme, warn);
+  $attention: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
@@ -21,8 +24,8 @@
       color: mat-color($info);
     }
 
-    &.mat-danger {
-      color: mat-color($danger);
+    &.mat-attention {
+      color: mat-color($attention);
     }
   }
 }
@@ -31,7 +34,7 @@
   $is-dark-theme: map-get($theme, is-dark);
   $success: map-get($theme, primary);
   $info: map-get($theme, accent);
-  $danger: map-get($theme, warn);
+  $attention: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
@@ -45,8 +48,8 @@
       @include mat-chips-theme-color($info);
     }
 
-    &.mat-danger {
-      @include mat-chips-theme-color($danger);
+    &.mat-attention {
+      @include mat-chips-theme-color($attention);
     }
   }
 }
@@ -54,10 +57,8 @@
 @mixin mat-custom-button-theme($theme) {
   $success: map-get($theme, primary);
   $info: map-get($theme, accent);
-  $danger: map-get($theme, warn);
-  .mat-debug {
-    color: red;
-  }
+  $attention: map-get($theme, warn);
+
   .mat-button {
     &.mat-success {
       color: mat-color($success);
@@ -71,8 +72,8 @@
   }
 
   .mat-button {
-    &.mat-danger {
-      color: mat-color($danger);
+    &.mat-attention {
+      color: mat-color($attention);
     }
   }
 
@@ -91,9 +92,9 @@
   }
 
   .mat-raised-button {
-    &.mat-danger {
-      color: mat-color($danger, default-contrast);
-      background: mat-color($danger);
+    &.mat-attention {
+      color: mat-color($attention, default-contrast);
+      background: mat-color($attention);
     }
   }
 
@@ -103,7 +104,7 @@
 @mixin mat-custom-radio-theme($theme) {
   $success: map-get($theme, primary);
   $info: map-get($theme, accent);
-  $danger: map-get($theme, warn);
+  $attention: map-get($theme, warn);
 
   .mat-radio-button {
     &.mat-success {
@@ -114,8 +115,8 @@
       @include mat-radio-color($info);
     }
 
-    &.mat-danger {
-      @include mat-radio-color($danger);
+    &.mat-attention {
+      @include mat-radio-color($attention);
     }
   }
 }
@@ -123,7 +124,7 @@
 @mixin mat-custom-checkbox-theme($theme) {
   $success: map-get($theme, primary);
   $info: map-get($theme, accent);
-  $danger: map-get($theme, warn);
+  $attention: map-get($theme, warn);
 
   .mat-checkbox-indeterminate, .mat-checkbox-checked {
     &.mat-success .mat-checkbox-background {
@@ -134,8 +135,8 @@
       background-color: mat-color($info);
     }
 
-    &.mat-danger .mat-checkbox-background {
-      background-color: mat-color($danger);
+    &.mat-attention .mat-checkbox-background {
+      background-color: mat-color($attention);
     }
   }
 }
@@ -144,7 +145,7 @@
 @mixin mat-custom-slider-theme($theme) {
   $success: map-get($theme, primary);
   $info: map-get($theme, accent);
-  $danger: map-get($theme, warn);
+  $attention: map-get($theme, warn);
 
   .mat-success {
     @include _mat-slider-inner-content-theme($success);
@@ -154,8 +155,8 @@
     @include _mat-slider-inner-content-theme($info);
   }
 
-  .mat-danger {
-    @include _mat-slider-inner-content-theme($danger);
+  .mat-attention {
+    @include _mat-slider-inner-content-theme($attention);
   }
 
 }
@@ -165,7 +166,7 @@
   $is-dark: map_get($theme, is-dark);
   $success: map-get($theme, primary);
   $info: map-get($theme, accent);
-  $danger: map-get($theme, warn);
+  $attention: map-get($theme, warn);
 
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
@@ -185,7 +186,7 @@
   $ripple-unchecked-color: mat-color($foreground, base, if($is-dark, 0.12, 0.06));
   $ripple-success-color: mat-color($success, $thumb-checked-hue, $ripple-checked-opacity);
   $ripple-info-color: mat-color($info, $thumb-checked-hue, $ripple-checked-opacity);
-  $ripple-danger-color: mat-color($danger, $thumb-checked-hue, $ripple-checked-opacity);
+  $ripple-attention-color: mat-color($attention, $thumb-checked-hue, $ripple-checked-opacity);
 
   .mat-slide-toggle {
     &.mat-success{
@@ -198,14 +199,71 @@
       @include _mat-slide-toggle-ripple($info, $ripple-unchecked-color,  $ripple-info-color);
     }
 
-    &.mat-danger {
-      @include _mat-slide-toggle-checked($danger, $thumb-checked-hue);
-      @include _mat-slide-toggle-ripple($danger, $ripple-unchecked-color, $ripple-danger-color);
+    &.mat-attention {
+      @include _mat-slide-toggle-checked($attention, $thumb-checked-hue);
+      @include _mat-slide-toggle-ripple($attention, $ripple-unchecked-color, $ripple-attention-color);
     }
 
   }
+}
 
+/* in contrast to all the other additions this an addtional color variant like "succes" but a custom variation */
+@mixin mat-additional-expansion-panel-theme($theme) {
+  $primary: map-get($theme, primary);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
 
+  $hoverbg: mat-color($primary,0.04);
+  $selectedbg: mat-color($primary,0.1);
+  .bsweb-mat-action-accordion {
+    //.mat-expansion-panel {
+    //  background: mat-color($background, card);
+    //  color: mat-color($foreground, text);
+    //}
+    //
+    //.mat-action-row {
+    //  border-top-color: mat-color($foreground, divider);
+    //}
+
+    .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header {
+      &:not([aria-disabled='true']) {
+        &.cdk-keyboard-focused,
+        &.cdk-program-focused,
+        &:hover {
+          background: $hoverbg;
+        }
+      }
+    }
+
+    .mat-expansion-panel.mat-expanded .mat-expansion-panel-header {
+      &:not([aria-disabled='true']) {
+        background: $selectedbg;
+      }
+    }
+
+    //
+    //.mat-expansion-panel-header-title {
+    //  color: mat-color($foreground, text);
+    //}
+    //
+    //.mat-expansion-panel-header-description,
+    //.mat-expansion-indicator::after {
+    //  color: mat-color($foreground, secondary-text);
+    //}
+    //
+    //.mat-expansion-panel-header[aria-disabled='true'] {
+    //  color: mat-color($foreground, disabled-button);
+    //
+    //  .mat-expansion-panel-header-title,
+    //  .mat-expansion-panel-header-description {
+    //    color: inherit;
+    //  }
+    //}
+  }
+}
+
+@mixin additional-material-theme($theme) { /*additional theming with standard material colors*/
+  @include mat-additional-expansion-panel-theme($theme);
 }
 
 

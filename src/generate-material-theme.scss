@@ -1,0 +1,61 @@
+@import '~@angular/material/theming';
+@import 'bsweb-mat-colors';
+@import 'bsweb-theming';
+
+$font-size-base: 14px;
+$line-height-base: 20px;
+$line-height-factor: $line-height-base / $font-size-base; // 20/14 ... orginally this was 1.125, but that value did not work with segoe ui font
+
+$font-family: '"Segoe UI", Roboto, "Helvetica Neue", Arial, Helvetica,  sans-serif';
+$display-4: mat-typography-level(112px, 112px, 300);
+$display-3: mat-typography-level(56px, 56px, 400);
+$display-2: mat-typography-level(45px, 48px, 400);
+$display-1: mat-typography-level(34px, 40px, 400);
+$headline: mat-typography-level(24px, 32px, 400);
+$title: mat-typography-level(20px, 32px, 500);
+$subheading-2: mat-typography-level(16px, 28px, 400);
+$subheading-1: mat-typography-level(15px, 24px, 400);
+$body-2: mat-typography-level($font-size-base, 24px, 500);
+$body-1: mat-typography-level($font-size-base, $line-height-base, 400);
+$caption: mat-typography-level(12px, $line-height-base, 400);
+$button: mat-typography-level($font-size-base, 50px, 500);
+// Line-height must be unit-less fraction of the font-size.
+$input: mat-typography-level(inherit, $line-height-factor, 400);
+
+$tconfig: mat-typography-config($font-family, $display-4, $display-3, $display-2, $display-1, $headline, $title, $subheading-2, $subheading-1, $body-2, $body-1, $caption, $button, $input);
+
+@include mat-core($tconfig);
+$primary: mat-palette($bsweb-colors-sky, 500, A200, A700); //$base-palette, $default: 500, $lighter: 100, $darker: 700
+$accent: mat-palette($bsweb-colors-sky, A700, A200, A900);
+/* warn was called "danger" in bootstrap */
+$warn: mat-palette($bsweb-colors-pomegranate, A400, A200, A700);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+/* generate standard material themed styles*/
+@include angular-material-theme($theme);
+/* generate addtional material theme variants like for our accordion styles*/
+@include additional-material-theme($theme);
+
+$success: mat-palette($bsweb-colors-lemon, A400, A200, A700);
+$info: mat-palette($bsweb-colors-aqua, A400, A200, A700);
+/* attention was called "warn" in bootstrap */
+$attention: mat-palette($bsweb-colors-pumkin, A400, A200, A700);
+
+$custom-theme: mat-light-theme($success, $info, $attention);
+
+/* generate material styles with adaptions to our additional colors:success,info,attention */
+@include custom-material-theme($custom-theme);
+
+//dark palette currently not implemented, but i leave them here so you know its possible
+
+//
+//.contenttheme-dark {
+//  $primary: mat-palette($mat-pink, 700, 500, 900);
+//  $accent:  mat-palette($mat-blue-grey, A200, A100, A400);
+//  $warn:    mat-palette($mat-red, A700);
+//
+//  $theme:   mat-dark-theme($primary, $accent, $warn);
+//
+//  @include angular-material-theme($theme);
+//}
