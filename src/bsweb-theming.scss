@@ -1,7 +1,6 @@
 /*!
  * @author RKlein
  */
-
 @import '~@angular/material/theming';
 
 // theming for extra colors success,info,attention (not included in orginial material css styles
@@ -100,7 +99,6 @@
 
 }
 
-
 @mixin mat-custom-radio-theme($theme) {
   $success: map-get($theme, primary);
   $info: map-get($theme, accent);
@@ -141,7 +139,6 @@
   }
 }
 
-
 @mixin mat-custom-slider-theme($theme) {
   $success: map-get($theme, primary);
   $info: map-get($theme, accent);
@@ -160,7 +157,6 @@
   }
 
 }
-
 
 @mixin mat-custom-slide-toggle-theme($theme) {
   $is-dark: map_get($theme, is-dark);
@@ -189,14 +185,14 @@
   $ripple-attention-color: mat-color($attention, $thumb-checked-hue, $ripple-checked-opacity);
 
   .mat-slide-toggle {
-    &.mat-success{
+    &.mat-success {
       @include _mat-slide-toggle-checked($success, $thumb-checked-hue);
       @include _mat-slide-toggle-ripple($success, $ripple-unchecked-color, $ripple-success-color);
     }
 
     &.mat-info {
       @include _mat-slide-toggle-checked($info, $thumb-checked-hue);
-      @include _mat-slide-toggle-ripple($info, $ripple-unchecked-color,  $ripple-info-color);
+      @include _mat-slide-toggle-ripple($info, $ripple-unchecked-color, $ripple-info-color);
     }
 
     &.mat-attention {
@@ -207,15 +203,30 @@
   }
 }
 
+// variation of the original material-accordion style which influences the included expanions panels
+// overiddes some styles from the material expansion-panel.scss
+@mixin mat-action-accordion() {
+  .bsweb-mat-action-accordion {
+    //.mat-expansion-panel-header {
+    //  padding: 0 24px;
+    //}
+    .mat-expansion-panel-body {
+      padding: 4px 24px 4px;
+      border: 1px solid red !important;
+    }
+  }
+}
+
 /* in contrast to all the other additions this an addtional color variant like "succes" but a custom variation */
-@mixin mat-additional-expansion-panel-theme($theme) {
+@mixin mat-action-accordion-expansion-panel-theme($theme) {
   $primary: map-get($theme, primary);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  $hoverbg: mat-color($primary,0.04);
-  $selectedbg: mat-color($primary,0.1);
+  $hoverbg: mat-color($primary, 0.04);
+  $selectedbg: mat-color($primary, 0.1);
   .bsweb-mat-action-accordion {
+
     //.mat-expansion-panel {
     //  background: mat-color($background, card);
     //  color: mat-color($foreground, text);
@@ -262,10 +273,28 @@
   }
 }
 
-@mixin additional-material-theme($theme) { /*additional theming with standard material colors*/
-  @include mat-additional-expansion-panel-theme($theme);
+@mixin mat-modify-option-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  .mat-option {
+    &:hover:not(.mat-option-disabled),
+    &:focus:not(.mat-option-disabled) {
+      background: mat-color($primary, A400);
+    }
+  }
 }
 
+@mixin modify-material-theme($theme) {
+  @include mat-modify-option-theme($theme);
+}
+
+@mixin additional-material-theme($theme) { /*additional theming with standard material colors*/
+  @include mat-action-accordion(); /* this is actually not a theme but additional styling (without colors)*/
+  @include mat-action-accordion-expansion-panel-theme($theme);
+}
 
 @mixin custom-material-theme($theme) {
   @include mat-custom-icon-theme($theme);

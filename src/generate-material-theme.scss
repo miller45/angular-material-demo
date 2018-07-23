@@ -34,6 +34,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 /* generate standard material themed styles*/
 @include angular-material-theme($theme);
+/* modify above themes */
+@include modify-material-theme($theme);
 /* generate addtional material theme variants like for our accordion styles*/
 @include additional-material-theme($theme);
 

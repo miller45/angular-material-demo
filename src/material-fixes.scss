@@ -167,17 +167,24 @@ mat-card-content tfoot {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
   }
+  span {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+  }
 }
 
 mat-card-content table {
   border-spacing: initial;
 }
+
 mat-card-content td,
 mat-card-content th {
-  padding:1px;
+  padding: 1px;
 }
+
 mat-card label {
-  display:initial;
+  display: initial;
 }
 
 button[mat-button], a[mat-button],

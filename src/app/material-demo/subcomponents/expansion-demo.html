@@ -62,3 +62,26 @@
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
+<div>
+  <hr>
+</div>
+<mat-accordion [displayMode]="displayMode" [multi]="multi"
+               class="mat-expansion-demo-width bsweb-mat-action-accordion">
+  <mat-expansion-panel #panel1  [hideToggle]="hideToggle">
+    <mat-expansion-panel-header>Section 1</mat-expansion-panel-header>
+    <p>This is the content text that makes sense here.</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel #panel2 [hideToggle]="hideToggle" [disabled]="disabled">
+    <mat-expansion-panel-header>Section 2</mat-expansion-panel-header>
+    <p>This is the content text that makes sense here.</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel #panel3 *ngIf="showPanel3" [hideToggle]="hideToggle">
+    <mat-expansion-panel-header>Section 3</mat-expansion-panel-header>
+    <mat-checkbox #showButtons>Reveal Buttons Below</mat-checkbox>
+    <mat-action-row *ngIf="showButtons.checked">
+      <button mat-button (click)="panel2.expanded = true">OPEN SECTION 2</button>
+      <button mat-button (click)="panel3.expanded = false">CLOSE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
