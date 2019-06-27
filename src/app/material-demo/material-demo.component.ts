@@ -25,6 +25,8 @@ export class MaterialDemoComponent implements OnInit, OnDestroy {
     public value: number = 50;
 
     ngOnInit() {
+
+        
     }
 
     ngOnDestroy() {

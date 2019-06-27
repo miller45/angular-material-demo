@@ -13,6 +13,7 @@ import {RolibMaterialUIModule} from './rolib/ui-material/rolib-ui-material.modul
 import {AppMaterialModule} from './app.material.module';
 import {AppDefaultDemoComponent, DialogContentComponent} from './app-default-demo.component';
 import {ChartsDemoModule} from './charts-demo/charts-demo.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import {ChartsDemoModule} from './charts-demo/charts-demo.module';
         MaterialDemoModule,
         BrowserAnimationsModule,
         ChartsDemoModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HttpClientModule,
     ],
     declarations: [AppComponent, DialogContentComponent, AppDefaultDemoComponent],
     entryComponents: [DialogContentComponent],

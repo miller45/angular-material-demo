@@ -76,26 +76,27 @@
     }
   }
 
-  .mat-raised-button {
+  .mat-raised-button, .mat-flat-button {
     &.mat-success {
       color: mat-color($success, default-contrast);
       background: mat-color($success);
     }
   }
 
-  .mat-raised-button {
+  .mat-raised-button, .mat-flat-button  {
     &.mat-info {
       color: mat-color($info, default-contrast);
       background: mat-color($info);
     }
   }
 
-  .mat-raised-button {
+  .mat-raised-button, .mat-flat-button  {
     &.mat-attention {
       color: mat-color($attention, default-contrast);
       background: mat-color($attention);
     }
   }
+
 
 }
 

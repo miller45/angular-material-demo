@@ -22,12 +22,14 @@ import {
     MatTabsModule,
     MatListModule
 } from '@angular/material';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     imports: [
         MatButtonModule, MatCheckboxModule, MatToolbarModule, MatChipsModule, MatOptionModule, MatGridListModule, MatProgressBarModule, MatSliderModule,
         MatSlideToggleModule, MatMenuModule, MatDialogModule, MatSnackBarModule, MatSelectModule, MatInputModule, MatSidenavModule, MatCardModule, MatIconModule,
-        MatRadioModule, MatProgressSpinnerModule, MatTabsModule, MatListModule
+        MatRadioModule, MatProgressSpinnerModule, MatTabsModule, MatListModule,
+        HttpClientModule
     ],
     exports: [
         MatButtonModule, MatCheckboxModule, MatToolbarModule, MatChipsModule, MatOptionModule, MatGridListModule, MatProgressBarModule, MatSliderModule,
