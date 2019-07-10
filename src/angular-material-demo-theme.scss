@@ -2,20 +2,20 @@
 
 @include mat-core();
 
-$primary: mat-palette($mat-indigo);
-$accent:  mat-palette($mat-pink, A200, A100, A400);
-$warn:    mat-palette($mat-red, A700);
+//palettes
 
-$theme: mat-light-theme($primary, $accent);
+//you can just use the a "standard pallette"
+$primary: mat-palette($mat-indigo);
+//here we take a "standard pallette" but we choose manually which colors to "pick" from the pallette
+$accent:  mat-palette($mat-green, A400 /* default color */, A100 /* lighter */, A700 /* darker */);
+//here we take a "standard pallette" but we choose manually one color to pick from the palette
+$warn:    mat-palette($mat-red,A400);
+
+$theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 
-.m2app-dark {
-  $primary: mat-palette($mat-pink, 700, 500, 900);
-  $accent:  mat-palette($mat-blue-grey, A200, A100, A400);
-  $warn:    mat-palette($mat-red, A700);
 
-  $theme:   mat-dark-theme($primary, $accent, $warn);
+// removed dark theme here to avoid confusion
 
-  @include angular-material-theme($theme);
-}
+

@@ -52,7 +52,7 @@ export class AppComponent {
   public color: string;
 
   public availableColors = [
-    { name: 'none', color: '' },
+    { name: 'none', color: 'none' },
     { name: 'Primary', color: 'primary' },
     { name: 'Accent', color: 'accent' },
     { name: 'Warn', color: 'warn' }

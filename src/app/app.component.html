@@ -40,13 +40,16 @@
 
     </mat-toolbar>
   </mat-sidenav>
-
+  <div class="overtoolbar"></div>
   <mat-toolbar color="primary">
-    <button mat-button class="app-menu-button" (click)="sidenav.toggle()">
+    <button mat-button class="app-menu-button" >
       <i class="material-icons">menu</i>
     </button>
     <span class="title">Angular Material Demo</span>
+
   </mat-toolbar>
+  <div class="undertoolbar"></div>
+
 
   <div class="app-content">
 
@@ -54,6 +57,7 @@
     <mat-card>
       <mat-card-content>
         <h2 class="example-h2">Material Button</h2>
+        <div class="custom1">Custom 1</div>
         <button class="app-button" mat-button>FLAT</button>
         <button class="app-button" mat-raised-button mat-tooltip="This is a tooltip!">RAISED</button>
         <button class="app-button" mat-raised-button color="primary">PRIMARY RAISED</button>
@@ -86,6 +90,23 @@
       </mat-card-content>
     </mat-card>
     <!-- /Material Checkbox -->
+
+
+    <!-- Material Progress Bar -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Progress Bar</h2>
+        <label>
+          Indeterminate progress-bar
+          <mat-progress-bar class="app-progress" mode="indeterminate" aria-label="Indeterminate progress-bar example"></mat-progress-bar>
+        </label>
+        <label>
+          Determinate progress bar - {{progress}}%
+          <mat-progress-bar class="app-progress" color="accent" mode="determinate" [value]="progress" aria-label="Determinate progress-bar example"></mat-progress-bar>
+        </label>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Progress Bar -->
 
     <!-- Material Radio Button -->
     <mat-card>
@@ -141,32 +162,6 @@
     </mat-card>
     <!-- /Material Select -->
 
-    <!-- Material List -->
-    <mat-card>
-      <mat-card-content>
-        <h2 class="example-h2">Material List</h2>
-        <mat-list class="app-list">
-          <mat-list-item *ngFor="let food of foods">
-            <h3 mat-line>{{food.name}}</h3>
-            <p mat-line class="demo-secondary-text">{{food.rating}}</p>
-          </mat-list-item>
-        </mat-list>
-      </mat-card-content>
-    </mat-card>
-    <!-- /Material List -->
-
-    <!-- Material Grid List -->
-    <mat-card>
-      <mat-card-content>
-        <h2 class="example-h2">Material Grid List</h2>
-        <mat-grid-list cols="4" rowHeight="100px">
-          <mat-grid-tile class="grid-test-1" *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
-            {{tile.text}}
-          </mat-grid-tile>
-        </mat-grid-list>
-      </mat-card-content>
-    </mat-card>
-    <!-- /Material Grid List -->
 
     <!-- Material Spinner -->
     <mat-card>
@@ -216,21 +211,6 @@
     </mat-card>
     <!-- /Material Spinner -->
 
-    <!-- Material Progress Bar -->
-    <mat-card>
-      <mat-card-content>
-        <h2 class="example-h2">Material Progress Bar</h2>
-        <label>
-          Indeterminate progress-bar
-          <mat-progress-bar class="app-progress" mode="indeterminate" aria-label="Indeterminate progress-bar example"></mat-progress-bar>
-        </label>
-        <label>
-          Determinate progress bar - {{progress}}%
-          <mat-progress-bar class="app-progress" color="accent" mode="determinate" [value]="progress" aria-label="Determinate progress-bar example"></mat-progress-bar>
-        </label>
-      </mat-card-content>
-    </mat-card>
-    <!-- /Material Progress Bar -->
 
     <!-- Material Tab -->
     <mat-card>
@@ -379,4 +359,34 @@
     </button>
     <!-- /Material Fab-->
   </div>
+
+  <!-- Material Grid List -->
+  <mat-card>
+    <mat-card-content>
+      <h2 class="example-h2">Material Grid List</h2>
+      <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile class="grid-test-1" *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
+          {{tile.text}}
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
+  <!-- /Material Grid List -->
+
+  <!-- Material List -->
+  <mat-card>
+    <mat-card-content>
+      <h2 class="example-h2">Material List</h2>
+      <mat-list class="app-list">
+        <mat-list-item *ngFor="let food of foods">
+          <h3 mat-line>{{food.name}}</h3>
+          <p mat-line class="demo-secondary-text">{{food.rating}}</p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+  <!-- /Material List -->
+
+
+
 </mat-sidenav-container>
